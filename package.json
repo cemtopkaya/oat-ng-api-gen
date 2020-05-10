@@ -1,6 +1,6 @@
 {
   "name": "@cinar/utility-ng-api-gen",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "",
   "bin": {
     "oag": "./bin/index.js"
