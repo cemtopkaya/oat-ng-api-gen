@@ -84,10 +84,10 @@ prompt.get(properties, function (err, result) {
   if (err) {
     return onErr(err);
   }
-  console.log("\nCommand-line input received:");
+  console.log("\nGiriş Yapılan Bilgiler:");
   console.log(`\tYAML Dosya: ${result.yamlPath}`);
   console.log(`\tPaket Adı: ${result.packageName}`);
-  console.log(`\tProje Dizini: ${result.angularProjectPath}`);
+  console.log(`\tProje Dizini: ${result.angularProjectPath}\n\n`);
   
 
   const openApiDest = path.join(angularProjectPath,`/projects/${packageName.replace("@","")}/src/lib`);
@@ -110,16 +110,16 @@ prompt.get(properties, function (err, result) {
     throw e;    
   }
 
-  console.log("----------------------------- anneeee..! bitti -----------------");
+  console.log("--------------------- Anneeee..! bitti -----------------");
 });
 
 function genApiFromYaml(yamlPath, openApiDest, packageName, angularCoreVersion){
   
-  const binPath = execSync("npm bin")
-  console.log(`\tbinPath--binPath: ${binPath}\n`);
+  // const binPath = execSync("npm bin")
+  // console.log(`\tbinPath--binPath: ${binPath}\n`);
 
 const pathOpenApiGen = path.join(__dirname, '../', 'node_modules', '.bin', 'openapi-generator.cmd');
-  console.log(`\tGen Dir: ${pathOpenApiGen}\n`);
+  // console.log(`\tGen Dir: ${pathOpenApiGen}\n`);
   const cmdGenApi = `${pathOpenApiGen} generate \
   -i ${yamlPath} \
   -g typescript-angular \
@@ -189,7 +189,7 @@ function movePackageJsons(openApiDest) {
   ["ng-package.json", "package.json"].forEach((file) => {
     const src = path.join(openApiDest, file);
     const dest = path.join(openApiDest, "../../", file);
-    console.log("-- copySync -> ", src, " --> ", dest);
+    // console.log("-- copySync -> ", src, " --> ", dest);
     const options = { overwrite: true };
     fsx.move(src, dest, options);
   });
@@ -204,7 +204,7 @@ function delUnneccessaryFoldersFiles(openApiDest) {
     `${path.join(openApiDest, ".gitignore")}`,
     `${path.join(openApiDest, "git_push.sh")}`,
   ].forEach((file) => {
-    console.log("-- removeSync -> ", file);
+    // console.log("-- removeSync -> ", file);
     fsx.removeSync(file);
   });
 }
