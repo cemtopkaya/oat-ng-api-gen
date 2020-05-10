@@ -15,7 +15,11 @@
   "main": "index.js",
   "scripts": {
     "start": "oag",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "git add . && git commit -m \"yeni sürüm\" && git push",
+    "publish": "npm version patch && npm publish",
+    "install": "npm u -g -f @cinar/utility-ng-api-gen && npm i -g @cinar/utility-ng-api-gen",
+    "c:p:i": "npm run commit && npm run publish && npm run install"
   },
   "keywords": [
     "openapitools",
