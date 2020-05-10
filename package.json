@@ -2,16 +2,31 @@
   "name": "@cinar/oat-ng-api-gen",
   "version": "1.0.0",
   "description": "",
+  "bin": {
+      "oag": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cemtopkaya/oat-ng-api-gen.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "oag",
+    "openApiGen": "openapi-generator",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["openapitools", "typescript"],
+  "keywords": [
+    "openapitools",
+    "typescript"
+  ],
   "author": "Cem Topkaya",
   "license": "ISC",
   "dependencies": {
     "@openapitools/openapi-generator-cli": "^1.0.13-4.3.1",
+    "fs-extra": "^9.0.0",
     "prompt": "^1.0.0"
   }
 }
