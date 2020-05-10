@@ -166,7 +166,7 @@ function genAngularLibrary(packageName, angularProjectPath){
 
 function delLibraryFiles(openApiDest) {
   const file = path.join(openApiDest, "../", "lib");
-  console.log("file: ", file);
+  // console.log("file: ", file);
   fsx.removeSync(file);
   fsx.ensureDirSync(file);
 }
