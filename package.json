@@ -16,10 +16,10 @@
   "scripts": {
     "start": "oag",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "commit": "git add . && git commit -m \"yeni sürüm\" && git push",
+    "commit": "git add . && git commit -m \"yeni surum\" && git push",
     "pub": "npm version patch && npm publish",
     "unpub": "npm unpublish -f",
-    "install": "npm u -g -f @cinar/utility-ng-api-gen && npm i -g @cinar/utility-ng-api-gen",
+    "install": "npm uninstall -g -f @cinar/utility-ng-api-gen && npm install -g @cinar/utility-ng-api-gen",
     "c:p:i": "npm run commit && npm run pub && npm run install"
   },
   "keywords": [
