@@ -118,7 +118,7 @@ function genApiFromYaml(yamlPath, openApiDest, packageName, angularCoreVersion){
   const binPath = execSync("npm bin")
   console.log(`\tbinPath--binPath: ${binPath}\n`);
 
-const pathOpenApiGen = path.join(__dirname, 'openapi-generator.cmd');
+const pathOpenApiGen = path.join(__dirname, 'node_modules', '.bin', 'openapi-generator.cmd');
   console.log(`\tGen Dir: ${pathOpenApiGen}\n`);
   const cmdGenApi = `${pathOpenApiGen} generate \
   -i ${yamlPath} \

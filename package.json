@@ -10,7 +10,7 @@
     "url": "git@github.com:cemtopkaya/oat-ng-api-gen.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org"
   },
   "main": "index.js",
   "scripts": {
